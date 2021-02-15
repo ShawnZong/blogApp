@@ -5,11 +5,14 @@ import blogService from '../services/blogs'
 
 const CommentList = ({ comments }) => {
   return (
-    <ListGroup>
-      {comments.map((comment, index) => (
-        <ListGroup.Item key={index}>{comment}</ListGroup.Item>
-      ))}
-    </ListGroup>
+    <>
+      <ListGroup>
+        {comments.map((comment, index) => (
+          <ListGroup.Item key={index}>{comment}</ListGroup.Item>
+        ))}
+      </ListGroup>
+      <br />
+    </>
   )
 }
 const NewCommentForm = ({ comments, setCommentsTmp }) => {
@@ -35,7 +38,9 @@ const NewCommentForm = ({ comments, setCommentsTmp }) => {
           />
         </Form.Group>
         <Form.Group>
-          <Button type="submit">add comment</Button>
+          <Button className="btn-white" type="submit">
+            add comment
+          </Button>
         </Form.Group>
       </Form.Row>
     </Form>

@@ -9,7 +9,7 @@ const ReturnButton = () => {
     history.goBack()
   }
   return (
-    <Button onClick={handleReturn} variant="secondary">
+    <Button className="btn-muted" onClick={handleReturn} variant="secondary">
       return
     </Button>
   )

@@ -6,6 +6,7 @@ import { resetNotification } from '../reducers/notificationReducer'
 import { userLogin, userLogout } from '../reducers/loginReducer'
 
 import { Button, Form } from 'react-bootstrap'
+import '../css/HomePage.css'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('')
@@ -23,7 +24,6 @@ const LoginForm = () => {
 
   return (
     <div>
-      <h2>Log in to application</h2>
       <Notification />
       <Form onSubmit={handleLogin}>
         <Form.Group>
@@ -45,8 +45,12 @@ const LoginForm = () => {
             name="Password"
             onChange={({ target }) => setPassword(target.value)}
           />
-          <Button id="loginButton" type="submit">
-            login
+          <Button
+            className="btn-block btn-color"
+            id="loginButton"
+            type="submit"
+          >
+            Log In
           </Button>
         </Form.Group>
       </Form>
@@ -66,7 +70,10 @@ const LogOutButton = ({ username }) => {
   }
   return (
     <div>
-      {username} logged in <Button onClick={handleLogout}>logout</Button>
+      <span className="text-white">{username} logged in </span>
+      <Button className="btn-muted" onClick={handleLogout}>
+        Log Out
+      </Button>
     </div>
   )
 }

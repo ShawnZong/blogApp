@@ -12,9 +12,15 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    minlength: 3,
     required: true,
   },
-  name: String,
+  name: {
+    type: String,
+    minlength: 3,
+    required: true,
+    unique: true,
+  },
   blogs: [
     {
       type: mongoose.Schema.Types.ObjectId,

@@ -19,7 +19,7 @@ const LikesButton = ({ likes, handleLikes }) => {
   return (
     <div>
       Likes: {likes}{' '}
-      <Button id="likesButton" onClick={handleLikes}>
+      <Button className="btn-highlight" id="likesButton" onClick={handleLikes}>
         like
       </Button>
     </div>
@@ -27,8 +27,9 @@ const LikesButton = ({ likes, handleLikes }) => {
 }
 const Blog = ({ blog }) => {
   return (
-    <Link to={`/blogs/${blog.id}`}>
-      {blog.title} {blog.author}
+    <Link className="text-primary" to={`/blogs/${blog.id}`}>
+      {blog.title} 📌
+      <small className="text-muted"> by {blog.author} </small>
     </Link>
   )
 }
@@ -62,9 +63,13 @@ const ToggledBlog = ({ index, blog, user }) => {
         <LikesButton likes={blogLikes} handleLikes={handleLikes} />
         <p>{blog.user.name}</p>
         {blog.user.id === user.id ? (
-          <Button onClick={handleRemove}>remove</Button>
+          <Button className="btn-muted" onClick={handleRemove}>
+            remove
+          </Button>
         ) : blog.user === user.id ? (
-          <Button onClick={handleRemove}>remove</Button>
+          <Button className="btn-muted" onClick={handleRemove}>
+            remove
+          </Button>
         ) : (
           ''
         )}
@@ -94,7 +99,7 @@ const BlogDetail = ({ blog, user }) => {
   }
   return (
     <div>
-      <Card>
+      <Card className="blogdetails">
         <Card.Header>
           <LikesButton likes={blogLikes} handleLikes={handleLikes} />
         </Card.Header>
@@ -102,16 +107,17 @@ const BlogDetail = ({ blog, user }) => {
           <blockquote className="blockquote mb-0">
             <p> {blog.title} </p>
             <footer className="blockquote-footer">
-              <cite title="Source Title">
-                {blog.author}
-                {'      '}{' '}
-              </cite>
+              <cite title="Source Title">{blog.author}</cite>
             </footer>
           </blockquote>
           {blog.user.id === user.id ? (
-            <Button onClick={handleRemove}>remove</Button>
+            <Button className="btn-muted" onClick={handleRemove}>
+              remove
+            </Button>
           ) : blog.user === user.id ? (
-            <Button onClick={handleRemove}>remove</Button>
+            <Button className="btn-muted" onClick={handleRemove}>
+              remove
+            </Button>
           ) : (
             ''
           )}
@@ -172,7 +178,7 @@ const NewBlogForm = ({ addBlog }) => {
             name="Url"
             onChange={({ target }) => setUrl(target.value)}
           />
-          <Button id="newBlogButton" type="submit">
+          <Button className="btn-highlight" id="newBlogButton" type="submit">
             create
           </Button>
         </Form.Group>

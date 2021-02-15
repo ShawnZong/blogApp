@@ -8,28 +8,38 @@ const Menu = () => {
   const user = useSelector((state) => state.user)
 
   return (
-    <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#" as="span">
-              <Link to="/">blogs</Link>
-            </Nav.Link>
-            <Nav.Link href="#" as="span">
-              <Link to="/users">users</Link>
-            </Nav.Link>
-            <Nav.Link href="#" as="span">
-              {user ? (
-                <LogOutButton username={user.name} />
-              ) : (
-                <Link to="/login">login</Link>
-              )}
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <Navbar
+      className="nav-green"
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+    >
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#" as="span">
+            <Link className="text-primary h4" to="/">
+              blogs 📝
+            </Link>
+          </Nav.Link>
+          <Nav.Link href="#" as="span">
+            <Link className="text-primary h4" to="/users">
+              users 👥
+            </Link>
+          </Nav.Link>
+        </Nav>
+        <Nav className="ml-auto">
+          <Nav.Link className="ml-auto" href="#" as="span">
+            {user ? (
+              <LogOutButton username={user.name} />
+            ) : (
+              <Link to="/login">login</Link>
+            )}
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   )
 }
 export { Menu }

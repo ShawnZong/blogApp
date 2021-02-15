@@ -31,16 +31,19 @@ const UserList = () => {
         <thead>
           <tr>
             <th></th>
-            <th>blogs created</th>
+            <th className="text-white">blogs created</th>
           </tr>
         </thead>
         <tbody>
           {userList.map((user) => (
             <tr key={user.id}>
               <td>
-                <Link to={`/users/${user.id}`}> {user.username}</Link>
+                <Link to={`/users/${user.id}`}>
+                  {' '}
+                  <span className="text-white">{user.username}</span>
+                </Link>
               </td>
-              <td>{user.blogs.length}</td>
+              <td className="text-white">{user.blogs.length}</td>
             </tr>
           ))}
         </tbody>
