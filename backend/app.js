@@ -13,6 +13,9 @@ const app = express();
 // const mongoUrl = 'mongodb://localhost/bloglist'
 const mongoUrl = config.MONGODB_URL;
 const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
   useCreateIndex: true,
   server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
   replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
