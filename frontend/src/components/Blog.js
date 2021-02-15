@@ -27,7 +27,7 @@ const LikesButton = ({ likes, handleLikes }) => {
 }
 const Blog = ({ blog }) => {
   return (
-    <Link className="text-primary" to={`/blogs/${blog.id}`}>
+    <Link className="text-primary link" to={`/blogs/${blog.id}`}>
       {blog.title} 📌
       <small className="text-muted"> by {blog.author} </small>
     </Link>

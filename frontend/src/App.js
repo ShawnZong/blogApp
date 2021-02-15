@@ -126,13 +126,12 @@ const App = () => {
                 <NewBlogForm addBlog={addBlog} />
               </Togglable>
               <ListGroup as="ul">
-                <ListGroup.Item as="li" variant="info">
+                <ListGroup.Item as="li" variant="info" className="h4">
                   Blogs
                 </ListGroup.Item>
                 {blogs.map((tmpblog) => (
                   <div key={tmpblog.id}>
                     <ListGroup.Item as="li" key={tmpblog.id}>
-                      {' '}
                       <Blog key={tmpblog.id} blog={tmpblog} />
                     </ListGroup.Item>
                   </div>

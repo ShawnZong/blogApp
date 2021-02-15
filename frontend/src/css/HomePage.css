@@ -9,7 +9,9 @@ body {
   background-image: linear-gradient(to right, #d500f9, #ffd54f);
   background-repeat: no-repeat;
 }
-
+.link {
+  text-decoration: underline;
+}
 input,
 textarea {
   background-color: #f3e5f5;
@@ -110,7 +112,7 @@ button:focus {
 .btn-highlight {
   border-radius: 50px;
   color: #fff;
-  background-image: linear-gradient(to right, #fa1313, #65d3a0);
+  background-image: linear-gradient(to right, #0275d8, #65d3a0);
   padding: 8px 40px;
   cursor: pointer;
   border: none !important;
