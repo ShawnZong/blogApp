@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 // components
 import { Blog, BlogDetail, NewBlogForm } from './components/Blog'
 import { LoginForm } from './components/LoginOut'
+import { SignupForm } from './components/SignUp'
 import { Notification } from './components/Notification'
 import Togglable from './components/Togglable'
 import { UserList, IndiUserView } from './components/User'
@@ -56,6 +57,7 @@ const App = () => {
     return (
       <div className="container">
         <LoginForm />
+        <SignupForm />
       </div>
     )
   }
