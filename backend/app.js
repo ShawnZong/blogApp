@@ -12,12 +12,17 @@ const app = express();
 
 // const mongoUrl = 'mongodb://localhost/bloglist'
 const mongoUrl = config.MONGODB_URL;
-
-mongoose.connect(mongoUrl, {
+const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true,
+  server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+};
+
+mongoose.connect(mongoUrl, {
+  options,
 });
 app.use(cors());
 app.use(express.static('build'));
