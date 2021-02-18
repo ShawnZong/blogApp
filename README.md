@@ -1,7 +1,9 @@
 # Full Stack Blog App 😄
 
 App website: https://junshengtan-blog-app.herokuapp.com
+
 Author: Junsheng Tan
+
 Portfolio website: https://junshengtan.webflow.io
 
 # Introudction
