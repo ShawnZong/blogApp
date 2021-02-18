@@ -8,7 +8,7 @@ Portfolio website: https://junshengtan.webflow.io
 
 # Introudction
 
-Blog website. You can create your account and post blog. Everyone can "👍 like" other blogs and the homepage will show the popular blogs. Also, you can add comments to the blog and communicate with other users. Users' statiscs is also shown.
+Blog website. You can create your account and post blogs. Everyone can "👍 like" other blogs and the homepage will show the popular blogs. Also, you can add comments to the blog and communicate with other users. Users' statistics are also shown.
 
 It also has API endpoints: /api/blogs and /api/users return blog statistics and user statistics
 
@@ -28,7 +28,7 @@ I use ***React*** to render UI components. For state management, I apply ***Redu
 
 ### Backend
 
-I use ***Express*** as backend server, ***MongoDB-Mongoose*** as database. To protect user info, I use ***bcrypt*** to encrypt data. 
+I use ***Node.js*** as backend runtime, ***Express*** as backend server, ***MongoDB-Mongoose*** as database. To protect user info, I use ***bcrypt*** to encrypt data. 
 
 ***Jest*** is used for testing server's response, and ***Morgan*** is for logging as debug tools.
 
@@ -52,6 +52,7 @@ I deployed the application on ***Heroku***, the website is https://junshengtan-b
   + Yup
 
 * Back End:
+  + Node.js
   + Express
   + MongoDB-Mongoose
   + Bcrypt
